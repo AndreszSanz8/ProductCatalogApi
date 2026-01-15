@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/Api_ProductCatalog.Api.UnitTests/Api_ProductCatalog.Api.UnitTests.csproj" />
+    <Project Path="tests/Api_ProductCatalog.Application.UnitTests/Api_ProductCatalog.Application.UnitTests.csproj" />
+  </Folder>
+  <Project Path="Api_ProductCatalog.Api/Api_ProductCatalog.Api.csproj" />
+  <Project Path="Api_ProductCatalog.Application/Api_ProductCatalog.Application.csproj" />
+  <Project Path="Api_ProductCatalog.Domain/Api_ProductCatalog.Domain.csproj" />
+  <Project Path="Api_ProductCatalog.Infrastructure/Api_ProductCatalog.Infrastructure.csproj" />
+</Solution>
