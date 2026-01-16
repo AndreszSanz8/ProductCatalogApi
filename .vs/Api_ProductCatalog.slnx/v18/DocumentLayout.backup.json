@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\ANDRES\\source\\repos\\Api_ProductCatalog\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E12D6F30-B697-975C-A814-39D58CACAE7C}|tests\\Api_ProductCatalog.Api.UnitTests\\Api_ProductCatalog.Api.UnitTests.csproj|c:\\users\\andres\\source\\repos\\api_productcatalog\\tests\\api_productcatalog.api.unittests\\controllers\\productscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E12D6F30-B697-975C-A814-39D58CACAE7C}|tests\\Api_ProductCatalog.Api.UnitTests\\Api_ProductCatalog.Api.UnitTests.csproj|solutionrelative:tests\\api_productcatalog.api.unittests\\controllers\\productscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8BF8DE0-A7D4-3EC1-CECA-8F4A51084812}|Api_ProductCatalog.Api\\Api_ProductCatalog.Api.csproj|c:\\users\\andres\\source\\repos\\api_productcatalog\\api_productcatalog.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F8BF8DE0-A7D4-3EC1-CECA-8F4A51084812}|Api_ProductCatalog.Api\\Api_ProductCatalog.Api.csproj|solutionrelative:api_productcatalog.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductsControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\ANDRES\\source\\repos\\Api_ProductCatalog\\tests\\Api_ProductCatalog.Api.UnitTests\\Controllers\\ProductsControllerTests.cs",
-              "RelativeDocumentMoniker": "tests\\Api_ProductCatalog.Api.UnitTests\\Controllers\\ProductsControllerTests.cs",
-              "ToolTip": "C:\\Users\\ANDRES\\source\\repos\\Api_ProductCatalog\\tests\\Api_ProductCatalog.Api.UnitTests\\Controllers\\ProductsControllerTests.cs",
-              "RelativeToolTip": "tests\\Api_ProductCatalog.Api.UnitTests\\Controllers\\ProductsControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-15T03:39:14.287Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ANDRES\\source\\repos\\Api_ProductCatalog\\Api_ProductCatalog.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Api_ProductCatalog.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\ANDRES\\source\\repos\\Api_ProductCatalog\\Api_ProductCatalog.Api\\appsettings.json",
+              "RelativeToolTip": "Api_ProductCatalog.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-16T00:39:21.692Z",
               "EditorCaption": ""
             }
           ]
