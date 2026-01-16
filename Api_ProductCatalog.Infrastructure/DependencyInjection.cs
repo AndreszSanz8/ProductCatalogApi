@@ -12,7 +12,7 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         services.AddDbContext<ProductCatalogContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("Default")));
+            options.UseSqlite(configuration.GetConnectionString("Default")));
 
         services.AddScoped<IProductRepository, ProductRepository>();
         return services;
