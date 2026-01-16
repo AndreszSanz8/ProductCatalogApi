@@ -1,118 +1,208 @@
-﻿
-API REST para la gestión de un catálogo de productos y su stock, desarrollada como parte de una prueba técnica backend.
-La solución está diseñada siguiendo buenas prácticas, principios de Clean Architecture y preparada para ser replicable, mantenible y lista para producción.
+1. Product Catalog API
 
-Proveer una API que permita:
-Administrar productos
-Consultar información de catálogo
-Controlar y actualizar stock
-Exponer endpoints claros y consistentes para consumo por aplicaciones web, móviles u otros servicios
-El foco de la solución está en la calidad técnica, claridad del diseño y facilidad de despliegue.
 
-La solución está organizada siguiendo Clean Architecture, separando responsabilidades en capas bien definidas:
-Api_ProductCatalog
-│
-├── Api_ProductCatalog.Api           → Capa de presentación (Controllers, Swagger)
-├── Api_ProductCatalog.Application   → Casos de uso, DTOs, servicios, validaciones
-├── Api_ProductCatalog.Domain        → Entidades y contratos de dominio
-├── Api_ProductCatalog.Infrastructure→ Persistencia (EF Core, Repositorios)
-└── tests
-    ├── Api_ProductCatalog.Api.UnitTests
-    └── Api_ProductCatalog.Application.UnitTests
-Beneficios de esta arquitectura
-Bajo acoplamiento
-Alta testabilidad
-Independencia de base de datos e infraestructura
-Fácil escalabilidad y mantenimiento
+
+API REST para la gestión de productos, desarrollada con .NET 8, Arquitectura Limpia, Entity Framework Core y SQLite.
+
+Incluye documentación con Swagger y está desplegada en la nube mediante Docker.
+
+
+
+2\. Demo en producción
+
+
+
+3\. Swagger UI:
+
+https://productcatalogapi-6kwr.onrender.com/swagger
+
+
+
+4\. Arquitectura
+
+
+
+El proyecto sigue una Arquitectura Limpia con separación de responsabilidades:
+
+
+
+Api\_ProductCatalog.Domain
+
+Api\_ProductCatalog.Application
+
+Api\_ProductCatalog.Infrastructure
+
+Api\_ProductCatalog.Api
+
+
+
+
+
+Domain: Entidades y reglas de negocio
+
+
+
+Application: Servicios, DTOs y lógica de aplicación
+
+
+
+Infrastructure: Acceso a datos (EF Core, SQLite)
+
+
+
+Api: Controladores, middlewares y configuración
+
+
+
+5\. Tecnologías usadas
+
+
 
 .NET 8
+
+
+
 ASP.NET Core Web API
+
+
+
 Entity Framework Core
-SQL Server (agnóstico a proveedor)
-FluentValidation
-Swagger / OpenAPI
-xUnit + Moq (tests unitarios)
 
-Product
-- Id
-- Name
-- Description
-- Price
-- Stock
-- IsActive
 
-La eliminación de productos se maneja como eliminación lógica (IsActive).
 
-Método	Endpoint	Descripción
-POST	/api/products	Crear un producto
-GET	/api/products	Listar productos
-GET	/api/products/{id}	Obtener producto por ID
-PATCH	/api/products/{id}/stock	Actualizar stock
-DELETE	/api/products/{id}	Eliminar producto
-Todos los contratos request/response están definidos mediante DTOs.
+SQLite
 
-Las validaciones de entrada se realizan con FluentValidation, separadas del controlador, por ejemplo:
-Nombre obligatorio
-Precio mayor a 0
-Stock no negativo
-Esto garantiza:
-Controladores limpios
-Errores consistentes
-Validaciones centralizadas
 
-Se incluyen pruebas unitarias para:
-Servicios de aplicación
-Controladores API
-Herramientas utilizadas:
-xUnit
-Moq
-Las pruebas están organizadas dentro de la carpeta tests/.
 
-La API expone documentación interactiva mediante Swagger:
-https://localhost:{puerto}/swagger
+Docker
 
-Incluye:
-Descripción de endpoints
-Tipos de datos
-Códigos de respuesta
-Ejemplos de uso
 
-1️⃣ Clonar repositorio
+
+Swagger
+
+
+
+GitHub + Render
+
+
+
+6\. Base de datos
+
+
+
+Se utiliza SQLite para facilitar el despliegue en la nube sin depender de infraestructura externa.
+
+
+
+La base de datos se genera automáticamente mediante migraciones de EF Core.
+
+
+
+7\. Cómo ejecutar el proyecto localmente
+
+7.1. Clonar el repositorio
+
 git clone https://github.com/AndreszSanz8/ProductCatalogApi.git
+
 cd ProductCatalogApi
-2️⃣ Configurar conexión a base de datos
-En appsettings.json:
-{
-  "ConnectionStrings": {
-    "Default": "Server=.;Database=ProductCatalogDb;Trusted_Connection=True;TrustServerCertificate=True"
-  }
-}
 
-dotnet ef database update \
---project Api_ProductCatalog.Infrastructure \
---startup-project Api_ProductCatalog.Api
-4️⃣ Ejecutar la API
-dotnet run --project Api_ProductCatalog.Api
 
-La solución es agnóstica a infraestructura, preparada para ser desplegada en:
-Azure
-AWS
-Contenedores Docker
-Entornos on-premise
 
-Clean Architecture para separación de responsabilidades
-EF Core como ORM por productividad y control
-Eliminación lógica para trazabilidad
-Validaciones desacopladas del controlador
-Diseño orientado a pruebas
+7.2. Restaurar dependencias
 
-Decisiones técnicas
-Arquitectura limpia para desacoplar dominio
-EF Core por rapidez y mantenibilidad
-FluentValidation para validación temprana
-Swagger para documentación viva
- 
+dotnet restore
 
-Andrés Sanz
-Backend Developer
-Prueba técnica – Fundación delamujer
+
+
+7.3. Ejecutar migraciones
+
+dotnet ef database update \\
+
+&nbsp; --project Api\_ProductCatalog.Infrastructure \\
+
+&nbsp; --startup-project Api\_ProductCatalog.Api
+
+
+
+7.4. Ejecutar la API
+
+dotnet run --project Api\_ProductCatalog.Api
+
+
+
+7.5. Abrir Swagger
+
+https://localhost:5001/swagger
+
+
+
+8\. Endpoints principales
+
+Método	Ruta			Descripción
+
+POST	/api/products		Crear producto
+
+GET	/api/products		Listar productos
+
+GET	/api/products/{id}	Obtener producto
+
+DELETE	/api/products/{id}	Eliminar producto
+
+PUT	/api/products/{id}	Actualizar producto
+
+
+
+9\. Validaciones
+
+
+
+Se aplican validaciones mediante DataAnnotations:
+
+
+
+Campos obligatorios
+
+
+
+Longitud máxima
+
+
+
+Rangos de valores
+
+
+
+Esto garantiza integridad de datos.
+
+
+
+10\. Despliegue
+
+
+
+La aplicación está desplegada en Render usando:
+
+
+
+Docker
+
+
+
+SQLite
+
+
+
+Puerto dinámico
+
+
+
+11\. Autor
+
+
+
+Jhoan Andrés Prieto Sánchez
+
+Desarrollador Full Stack .NET
+
+GitHub: https://github.com/AndreszSanz8
+
